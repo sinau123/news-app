@@ -1,0 +1,23 @@
+{    
+    "prettier.arrowParens": "avoid",
+    "files.insertFinalNewline": true,  
+    "[javascript]": {    
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.detectIndentation": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "files.insertFinalNewline": true,
+        "editor.rulers": [140],
+    },
+    "[typescript]": {    
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.detectIndentation": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "files.insertFinalNewline": true,
+        "editor.rulers": [140],
+    },
+    "tslint.configFile": "tslint.json",
+}
