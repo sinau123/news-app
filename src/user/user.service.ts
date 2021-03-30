@@ -5,7 +5,11 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
-  private users: User[] = [];
+  private users: User[] = [
+    new User('Denis', 18),
+    new User('Embun', 3),
+    new User('Nuning', 17),
+  ];
 
   create(createUserDto: CreateUserDto) {
     const newUser = new User(createUserDto.name, createUserDto.age);
@@ -26,11 +30,18 @@ export class UserService {
     return user;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  update(id: string, updateUserDto: UpdateUserDto) {
+    const user = this.findOne(id);
+
+    user.name = updateUserDto.name ?? user.name;
+    user.age = updateUserDto.age ?? user.age;
+
+    return user;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  remove(id: string) {
+    const user = this.findOne(id);
+    this.users = this.users.filter((x) => x.id !== id);
+    return user;
   }
 }
